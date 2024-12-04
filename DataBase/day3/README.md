@@ -8,17 +8,17 @@ This repository contains the complete schema design, data insertion, and manipul
 ```sql
 CREATE DATABASE UniversityDB;
 USE UniversityDB;
+```
 2. Create Tables
 2.1 Topic Table
-sql
-Copy code
+```sql
 CREATE TABLE Topic (
     TID INT PRIMARY KEY,
     name VARCHAR(255)
 );
+```
 2.2 Course Table
-sql
-Copy code
+```sql
 CREATE TABLE Course (
     CID INT PRIMARY KEY,
     name VARCHAR(255),
@@ -27,17 +27,17 @@ CREATE TABLE Course (
     TID INT,
     FOREIGN KEY (TID) REFERENCES Topic(TID)
 );
+```
 2.3 Department Table
-sql
-Copy code
+```sql
 CREATE TABLE Department (
     DID INT PRIMARY KEY,
     name VARCHAR(255),
     HiringDate DATE
 );
+```
 2.4 Instructor Table
-sql
-Copy code
+```sql
 CREATE TABLE Instructor (
     InsId INT PRIMARY KEY,
     name VARCHAR(250),
@@ -48,17 +48,17 @@ CREATE TABLE Instructor (
     DID INT,
     FOREIGN KEY (DID) REFERENCES Department(DID)
 );
+```
 2.5 Add Instructor ID to Department Table
-sql
-Copy code
+```sql
 ALTER TABLE Department
 ADD InsId INT;
 
 ALTER TABLE Department
 ADD FOREIGN KEY (InsId) REFERENCES Instructor(InsId);
+```
 2.6 Students Table
-sql
-Copy code
+```sql
 CREATE TABLE Students (
     SID INT PRIMARY KEY,
     F_name VARCHAR(255),
@@ -68,9 +68,9 @@ CREATE TABLE Students (
     DID INT,
     FOREIGN KEY (DID) REFERENCES Department(DID)
 );
+```
 2.7 Enrollment Table
-sql
-Copy code
+```sql
 CREATE TABLE Enrollment (
     SID INT,
     CID INT,
@@ -79,9 +79,9 @@ CREATE TABLE Enrollment (
     FOREIGN KEY (SID) REFERENCES Students(SID),
     FOREIGN KEY (CID) REFERENCES Course(CID)
 );
+```
 2.8 Teaching Table
-sql
-Copy code
+```sql
 CREATE TABLE Teaching (
     InsID INT,
     CID INT,
@@ -90,45 +90,45 @@ CREATE TABLE Teaching (
     FOREIGN KEY (InsID) REFERENCES Instructor(InsID),
     FOREIGN KEY (CID) REFERENCES Course(CID)
 );
+```
 3. Insert Data
 3.1 Insert into Department Table
-sql
-Copy code
+```sql
 INSERT INTO Department
 VALUES 
     (10, 'IS', '1970-02-19', NULL),
     (15, 'CS', '1990-02-19', NULL);
+```
 3.2 Insert into Topic Table
-sql
-Copy code
+```sql
 INSERT INTO Topic
 VALUES 
     (26, 'Data Structure'),
     (28, 'Programming by Python');
+```
 3.3 Insert into Students Table
-sql
-Copy code
+```sql
 INSERT INTO Students (SID, F_name, L_name, age, address, DID)
 VALUES 
     (1, 'Arwa', 'Zakria', 21, '123 Cairo', 10),
     (2, 'Jane', 'Smith', 22, '456 Elm St', 15);
+```
 3.4 Insert into Instructor Table
-sql
-Copy code
+```sql
 INSERT INTO Instructor (InsID, name, bonus, address, salary, hourRate, DID) 
 VALUES 
     (1, 'Alice', NULL, '789 Alex', 5000, 50, 10),
     (2, 'Bob', NULL, '321 BNS', 6000, 55, 15);
+```
 3.5 Insert into Course Table
-sql
-Copy code
+```sql
 INSERT INTO Course (CID, name, duration, description, TID) 
 VALUES 
     (1, 'Programming', 30, 'C++', 26),
     (2, 'Fundamentals of Programming', 45, 'Python Basics', 28);
+```
 3.6 Insert Additional Data
-sql
-Copy code
+```sql
 INSERT INTO Department
 VALUES (20, 'MM', '2000-02-19', NULL);
 
@@ -138,19 +138,20 @@ VALUES (3, 'Talia', 'Mohamed', 24, '459 BNS EG', 20);
 INSERT INTO Instructor (InsID, name, bonus, address, salary, hourRate, DID) 
 VALUES 
     (3, 'Fatma', NULL, 'Alexandria, Egypt', 10500, 45, 20);
+```
 4. Data Manipulation (DML)
 4.1 Update Instructor Salaries
 Increase all instructor salaries by 15%:
 
-sql
-Copy code
+```sql
 UPDATE Instructor
 SET salary = (0.15 * salary) + salary;
+```
 4.2 Update Course Name
 Change the name of a course:
 
-sql
-Copy code
+```sql
 UPDATE Course
 SET name = 'Code Wave'
 WHERE CID = 1;
+```
