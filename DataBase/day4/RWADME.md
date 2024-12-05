@@ -148,3 +148,9 @@ BEGIN
 END;
 SELECT * FROM GetStudentsName('first name');
 ```
+🛠️ Technologies Used
+SQL Server
+Table-Valued Functions
+Ranking Functions (RANK(), ROW_NUMBER())
+🤝 Contributing
+Feel free to fork this repository, raise issues, or submit pull requests. Your contributions are welcome!
