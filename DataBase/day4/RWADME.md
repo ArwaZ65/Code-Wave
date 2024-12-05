@@ -1,4 +1,4 @@
-📚 UniversityDB SQL Project
+###📚 UniversityDB SQL Project
 This project demonstrates advanced SQL techniques using the UniversityDB database. The tasks showcase querying, ranking, and creating custom functions for dynamic and reusable operations. These examples are great for learning SQL features like RANK(), ROW_NUMBER(), table-valued functions, and multi-statement table-valued functions.
 
 🔧 Database Overview
