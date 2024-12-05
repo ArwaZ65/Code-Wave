@@ -11,7 +11,7 @@ This project demonstrates advanced SQL techniques using the UniversityDB databas
 ---
 
 ## 🚀 Steps to Create and Manage the Database
-###🔧 Database Overview
+##🔧 Database Overview
 The project is built on a university database (UniversityDB) with the following tables:
 
 Instructor: Contains details about instructors, their departments, and salaries.
