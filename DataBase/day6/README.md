@@ -1,4 +1,4 @@
-# ITI Database Tasks
+# Day 6 Code Wave Database Tasks
 
 This repository contains SQL tasks related to stored procedures and triggers. Each task is detailed below with code and usage examples.
 
