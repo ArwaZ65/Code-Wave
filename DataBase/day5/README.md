@@ -34,4 +34,32 @@ inner join Topic on Instructor.Ins_Id=Topic.Top_Id
 
 select * from InstructorsTopics
 ```
+## What is a View?
+
+A **view** in SQL is a virtual table based on the result of a query. It does not store data itself but retrieves data from the underlying tables. Views are used for:
+- **Simplified Queries**: Complex queries can be encapsulated in a view to simplify usage.
+- **Data Security**: Restrict access to specific columns or rows.
+- **Consistency**: Centralize logic so all users access the same calculations or filtered data.
+- **Reusability**: Avoid repeating complex joins or filters across multiple queries.
+
+---
+
+## Why Use an Encrypted View?
+
+An **encrypted view** secures the definition of the view so that no one can read the underlying SQL query. This is useful for:
+- Protecting proprietary logic.
+- Restricting access to the query structure while allowing authorized users to view the data.
+- Adding an extra layer of security in shared or multi-user environments.
+
+---
+## Key Differences: Regular View vs. Encrypted View
+
+| **Feature**           | **Regular View**                                | **Encrypted View**                             |
+|------------------------|------------------------------------------------|-----------------------------------------------|
+| **Visibility**         | The SQL definition is visible to all users.    | The SQL definition is hidden from users.      |
+| **Security**           | Limited to table-level security configurations.| Adds an additional security layer to the view.|
+| **Use Case**           | General-purpose views for ease of access.      | Secure views where query logic must be hidden.|
+
+---
+
 
