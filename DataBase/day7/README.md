@@ -13,7 +13,6 @@ A **View** is a virtual table that provides a specific, predefined way of presen
 - **Data Retrieval:** Always reflects the current state of the underlying tables. Any changes in the base tables are reflected in the View.
 - **Usage:** Mainly used for simplifying complex queries, securing data (by exposing only specific columns or rows), and providing data abstraction.
 - **Execution:** Executed only when queried. It does not store data physically; instead, it runs the query and retrieves data at runtime.
-- **Limitations:** Cannot include procedural logic (e.g., loops or conditions).
 
 ### Limitations:
 - Cannot accept parameters.
@@ -37,7 +36,6 @@ A **Function** is a database object that performs a specific calculation or oper
 - **Data Manipulation:** Limited to read-only operations; it cannot modify database objects or data.
 - **Usage:** Ideal for encapsulating calculations or logic that needs to be reused, such as formatting or aggregations.
 - **Execution:** Can be called within a query, and the result integrates seamlessly with the query.
-- **Limitations:** Cannot perform actions such as INSERT, UPDATE, or DELETE.
 
 ### Limitations:
 - Cannot modify database state (read-only).
