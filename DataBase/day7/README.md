@@ -15,6 +15,10 @@ A **View** is a virtual table that provides a specific, predefined way of presen
 - **Execution:** Executed only when queried. It does not store data physically; instead, it runs the query and retrieves data at runtime.
 - **Limitations:** Cannot include procedural logic (e.g., loops or conditions).
 
+### Limitations:
+- Cannot accept parameters.
+- Typically read-only, unless certain conditions allow for updates.
+
 ### Example:
 ```sql
 CREATE VIEW ActiveUsers AS
@@ -34,6 +38,10 @@ A **Function** is a database object that performs a specific calculation or oper
 - **Usage:** Ideal for encapsulating calculations or logic that needs to be reused, such as formatting or aggregations.
 - **Execution:** Can be called within a query, and the result integrates seamlessly with the query.
 - **Limitations:** Cannot perform actions such as INSERT, UPDATE, or DELETE.
+
+### Limitations:
+- Cannot modify database state (read-only).
+- Must return a value or table.
 
 ### Example:
 ```sql
@@ -59,7 +67,11 @@ A **Stored Procedure** A Stored Procedure is a set of SQL statements and logic s
 - **Usage:** Often used for complex operations, batch processing, or enforcing business rules. It can also accept input parameters and return output parameters.
 - **Execution:** Invoked explicitly by calling its name, often with parameters.
 - **Flexibility:** Allows procedural logic, such as loops and conditions.
-
+  
+### Limitations:
+- Cannot be embedded directly in SQL queries.
+- Typically more resource-intensive than Views or Functions.
+  
 ### Example:
 ```sql
 CREATE PROCEDURE UpdateUserStatus
